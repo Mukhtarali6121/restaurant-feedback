@@ -3,12 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div class="brand">
-    <img src="klassic logo.png" alt="Klassic Restaurant Logo">
-    <h1>Klassic <span>Restaurant</span></h1>
-</div>
-
-<p>Your feedback helps us improve every day</p>
+<title>Klassic Restaurant - Feedback</title>
 <style>
 *{
 margin:0;
@@ -37,16 +32,26 @@ border:1px solid rgba(84, 64, 62, 0.05);
 }
 .header{
 background:#54403e;
-padding:48px 32px;
+padding:40px 32px;
 text-align:center;
 color:#fcf2e0;
 position:relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 12px;
+}
+.brand-logo {
+height: 65px;
+width: auto;
+object-fit: contain;
+filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
 }
 .header h1{
-font-size:32px;
+font-size:28px;
 font-weight: 700;
 letter-spacing: -0.5px;
-margin-bottom:8px;
+margin-bottom:4px;
 color: #ffffff;
 }
 .header h1 span {
@@ -55,7 +60,7 @@ opacity: 0.9;
 }
 .header p{
 opacity:.75;
-font-size:15px;
+font-size:14px;
 font-weight: 400;
 }
 .form-section{
@@ -187,6 +192,7 @@ font-weight: 500;
 <body>
 <div class="container">
 <div class="header">
+<img src="klassic logo.png" alt="Klassic Restaurant Logo" class="brand-logo">
 <h1>Klassic <span>Restaurant</span></h1>
 <p>Your feedback helps us improve every day</p>
 </div>
@@ -201,7 +207,6 @@ font-weight: 500;
 <input type="text" name="phone" placeholder="Enter phone number">
 </div>
 
-<!-- Food Quality Rating -->
 <div class="rating-box">
 <div class="rating-title">Food Quality</div>
 <div class="stars">
@@ -218,7 +223,6 @@ font-weight: 500;
 </div>
 </div>
 
-<!-- Service Rating -->
 <div class="rating-box">
 <div class="rating-title">Service Rating</div>
 <div class="stars">
@@ -235,7 +239,6 @@ font-weight: 500;
 </div>
 </div>
 
-<!-- Cleanliness Rating -->
 <div class="rating-box">
 <div class="rating-title">Cleanliness Rating</div>
 <div class="stars">
