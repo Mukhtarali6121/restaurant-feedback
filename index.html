@@ -1,288 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Restaurant Feedback</title>
-
+<title>Klassic Restaurant - Feedback</title>
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
-
 body{
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-background:linear-gradient(135deg,#1f2937,#111827);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+background-color:#f8f9fa;
+background-image:radial-gradient(#e9ecef 1px,transparent 0);
+background-size:24px 24px;
 min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-padding:20px;
+padding:40px 20px;
 }
-
 .container{
 width:100%;
-max-width:650px;
-background:#fff;
+max-width:600px;
+background:#ffffff;
 border-radius:24px;
 overflow:hidden;
-box-shadow:0 20px 50px rgba(0,0,0,.25);
+box-shadow:0 10px 40px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.02);
+border:1px solid rgba(0,0,0,0.03);
 }
-
 .header{
-background:linear-gradient(135deg,#f59e0b,#d97706);
-padding:40px 30px;
+background:linear-gradient(135deg,#1f2937,#111827);
+padding:48px 32px;
 text-align:center;
 color:white;
+position:relative;
 }
-
+.header::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 60px;
+height: 4px;
+background: #f59e0b;
+border-radius: 2px 2px 0 0;
+}
 .header h1{
-font-size:34px;
+font-size:32px;
+font-weight: 700;
+letter-spacing: -0.5px;
 margin-bottom:8px;
+color: #ffffff;
 }
-
+.header h1 span {
+color: #f59e0b;
+}
 .header p{
-opacity:.95;
+opacity:.8;
 font-size:15px;
+font-weight: 400;
 }
-
 .form-section{
-padding:30px;
+padding:40px 32px;
 }
-
 .input-group{
-margin-bottom:20px;
+margin-bottom:24px;
 }
-
 label{
 display:block;
 margin-bottom:8px;
 font-weight:600;
+font-size:14px;
 color:#374151;
+letter-spacing: -0.1px;
 }
-
 input,
 textarea{
 width:100%;
-padding:14px;
-border:1px solid #d1d5db;
+padding:14px 16px;
+border:1px solid #e5e7eb;
 border-radius:12px;
 font-size:15px;
-transition:.2s;
+color: #1f2937;
+background-color: #f9fafb;
+transition: all .2s ease;
 }
-
+input::placeholder,
+textarea::placeholder {
+color: #9ca3af;
+}
 input:focus,
 textarea:focus{
 outline:none;
 border-color:#f59e0b;
-box-shadow:0 0 0 4px rgba(245,158,11,.15);
+background-color: #fff;
+box-shadow:0 0 0 4px rgba(245,158,11,.1);
 }
-
 textarea{
-height:120px;
+height:110px;
 resize:none;
 }
-
 .rating-box{
-margin-bottom:25px;
+margin-bottom:24px;
+background: #f9fafb;
+padding: 16px;
+border-radius: 12px;
+border: 1px solid #f3f4f6;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
-
 .rating-title{
-margin-bottom:10px;
 font-weight:600;
+font-size: 14px;
 color:#374151;
 }
-
 .stars{
 display:flex;
 flex-direction:row-reverse;
 justify-content:flex-end;
 }
-
 .stars input{
 display:none;
 }
-
 .stars label{
-font-size:34px;
-color:#d1d5db;
+font-size:28px;
+color:#e5e7eb;
 cursor:pointer;
 transition:.2s;
-margin-right:4px;
+margin-left:4px;
 }
-
 .stars label:hover,
 .stars label:hover ~ label,
 .stars input:checked ~ label{
-color:#fbbf24;
+color:#f59e0b;
 }
-
 button{
 width:100%;
 padding:16px;
 border:none;
 border-radius:12px;
-background:#f59e0b;
+background:#111827;
 color:white;
 font-size:16px;
 font-weight:600;
 cursor:pointer;
-transition:.2s;
+transition:all .2s ease;
+margin-top: 8px;
+box-shadow: 0 4px 12px rgba(17, 24, 39, 0.15);
 }
-
 button:hover{
-background:#d97706;
+background:#1f2937;
+transform: translateY(-1px);
+box-shadow: 0 6px 20px rgba(17, 24, 39, 0.2);
 }
-
+button:active {
+transform: translateY(0);
+}
 .success{
 display:none;
 margin-top:20px;
-padding:14px;
-background:#dcfce7;
-color:#166534;
+padding:16px;
+background:#ecfdf5;
+color:#065f46;
 border-radius:12px;
 text-align:center;
 font-weight:600;
+font-size: 15px;
+border: 1px solid #a7f3d0;
+animation: fadeIn 0.3s ease;
 }
-
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: translateY(0); }
+}
 .footer{
 text-align:center;
-padding:15px;
+padding:24px;
 font-size:13px;
-color:#6b7280;
-border-top:1px solid #eee;
+color:#9ca3af;
+border-top:1px solid #f3f4f6;
+background: #fafafa;
+letter-spacing: 0.5px;
 }
-
 </style>
 </head>
-
 <body>
-
 <div class="container">
-
 <div class="header">
-<h1>🍽 Restaurant Feedback</h1>
+<h1>Klassic <span>Restaurant</span></h1>
 <p>Your feedback helps us improve every day</p>
 </div>
-
 <div class="form-section">
-
 <form id="feedbackForm">
-
 <div class="input-group">
 <label>Name (Optional)</label>
 <input type="text" name="name" placeholder="Enter your name">
 </div>
-
 <div class="input-group">
 <label>Phone Number (Optional)</label>
 <input type="text" name="phone" placeholder="Enter phone number">
 </div>
 
+<!-- Food Quality Rating -->
 <div class="rating-box">
 <div class="rating-title">Food Quality</div>
-
 <div class="stars">
 <input type="radio" id="food5" name="foodRating" value="5" checked>
 <label for="food5">★</label>
-
 <input type="radio" id="food4" name="foodRating" value="4">
 <label for="food4">★</label>
-
 <input type="radio" id="food3" name="foodRating" value="3">
 <label for="food3">★</label>
-
 <input type="radio" id="food2" name="foodRating" value="2">
 <label for="food2">★</label>
-
 <input type="radio" id="food1" name="foodRating" value="1">
 <label for="food1">★</label>
 </div>
 </div>
 
-<div class="input-group">
-<label>Service Rating</label>
-
-<select name="serviceRating" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;">
-<option value="5">⭐⭐⭐⭐⭐ Excellent</option>
-<option value="4">⭐⭐⭐⭐ Very Good</option>
-<option value="3">⭐⭐⭐ Good</option>
-<option value="2">⭐⭐ Fair</option>
-<option value="1">⭐ Poor</option>
-</select>
+<!-- Service Rating Redesigned into Star System -->
+<div class="rating-box">
+<div class="rating-title">Service Rating</div>
+<div class="stars">
+<input type="radio" id="service5" name="serviceRating" value="5" checked>
+<label for="service5">★</label>
+<input type="radio" id="service4" name="serviceRating" value="4">
+<label for="service4">★</label>
+<input type="radio" id="service3" name="serviceRating" value="3">
+<label for="service3">★</label>
+<input type="radio" id="service2" name="serviceRating" value="2">
+<label for="service2">★</label>
+<input type="radio" id="service1" name="serviceRating" value="1">
+<label for="service1">★</label>
+</div>
 </div>
 
-<div class="input-group">
-<label>Cleanliness Rating</label>
-
-<select name="cleanlinessRating" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;">
-<option value="5">⭐⭐⭐⭐⭐ Excellent</option>
-<option value="4">⭐⭐⭐⭐ Very Good</option>
-<option value="3">⭐⭐⭐ Good</option>
-<option value="2">⭐⭐ Fair</option>
-<option value="1">⭐ Poor</option>
-</select>
+<!-- Cleanliness Rating Redesigned into Star System -->
+<div class="rating-box">
+<div class="rating-title">Cleanliness Rating</div>
+<div class="stars">
+<input type="radio" id="clean5" name="cleanlinessRating" value="5" checked>
+<label for="clean5">★</label>
+<input type="radio" id="clean4" name="cleanlinessRating" value="4">
+<label for="clean4">★</label>
+<input type="radio" id="clean3" name="cleanlinessRating" value="3">
+<label for="clean3">★</label>
+<input type="radio" id="clean2" name="cleanlinessRating" value="2">
+<label for="clean2">★</label>
+<input type="radio" id="clean1" name="cleanlinessRating" value="1">
+<label for="clean1">★</label>
+</div>
 </div>
 
 <div class="input-group">
 <label>Comments</label>
-<textarea
-name="comments"
-placeholder="Tell us about your dining experience..."></textarea>
+<textarea name="comments" placeholder="Tell us about your dining experience..."></textarea>
 </div>
-
-<button type="submit">
-Submit Feedback
-</button>
-
+<button type="submit">Submit Feedback</button>
 <div class="success" id="successMessage">
-✅ Thank you for your feedback!
+✨ Thank you for your feedback!
 </div>
-
 </form>
-
 </div>
-
 <div class="footer">
-Thank you for dining with us ❤️
+THANK YOU FOR DINING WITH US
 </div>
-
 </div>
-
 <script>
-
-const scriptURL =
-"https://script.google.com/macros/s/AKfycbwCWq2U8lXMuRcqdiGQFFsmr9m3d7jdCptqtH-QmiHs8eop9Gn7z_UtaBGd41V_wllG/exec";
-
-document.getElementById("feedbackForm")
-.addEventListener("submit", function(e){
-
+const scriptURL = "https://script.google.com/macros/s/AKfycbwCWq2U8lXMuRcqdiGQFFsmr9m3d7jdCptqtH-QmiHs8eop9Gn7z_UtaBGd41V_wllG/exec";
+document.getElementById("feedbackForm").addEventListener("submit", function(e){
 e.preventDefault();
-
 const formData = new FormData(this);
-
 fetch(scriptURL,{
 method:"POST",
 body:formData,
 mode:"no-cors"
 });
-
 document.getElementById("successMessage").style.display="block";
-
 this.reset();
-
 setTimeout(()=>{
 document.getElementById("successMessage").style.display="none";
 },3000);
-
 });
-
 </script>
-
 </body>
 </html>
