@@ -1,3 +1,10 @@
+Here is the updated design tailored specifically to your restaurant's brand colors.
+
+I have applied `#54403e` (a beautiful, rich dark chocolate/espresso tone) as the primary brand color for the header, typography, and button, while using `#fcf2e0` (a warm, inviting cream/almond shade) for the page background and input highlights.
+
+All of your naming conventions, unique field `name` attributes, and Google Apps Script integrations remain fully intact.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +19,8 @@ box-sizing:border-box;
 }
 body{
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-background-color:#f8f9fa;
-background-image:radial-gradient(#e9ecef 1px,transparent 0);
+background-color:#fcf2e0;
+background-image:radial-gradient(rgba(84, 64, 62, 0.05) 1px, transparent 0);
 background-size:24px 24px;
 min-height:100vh;
 display:flex;
@@ -27,26 +34,15 @@ max-width:600px;
 background:#ffffff;
 border-radius:24px;
 overflow:hidden;
-box-shadow:0 10px 40px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.02);
-border:1px solid rgba(0,0,0,0.03);
+box-shadow:0 15px 45px rgba(84, 64, 62, 0.08), 0 1px 3px rgba(84, 64, 62, 0.02);
+border:1px solid rgba(84, 64, 62, 0.05);
 }
 .header{
-background:linear-gradient(135deg,#1f2937,#111827);
+background:#54403e;
 padding:48px 32px;
 text-align:center;
-color:white;
+color:#fcf2e0;
 position:relative;
-}
-.header::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 50%;
-transform: translateX(-50%);
-width: 60px;
-height: 4px;
-background: #f59e0b;
-border-radius: 2px 2px 0 0;
 }
 .header h1{
 font-size:32px;
@@ -56,10 +52,11 @@ margin-bottom:8px;
 color: #ffffff;
 }
 .header h1 span {
-color: #f59e0b;
+color: #fcf2e0;
+opacity: 0.9;
 }
 .header p{
-opacity:.8;
+opacity:.75;
 font-size:15px;
 font-weight: 400;
 }
@@ -74,18 +71,18 @@ display:block;
 margin-bottom:8px;
 font-weight:600;
 font-size:14px;
-color:#374151;
+color:#54403e;
 letter-spacing: -0.1px;
 }
 input,
 textarea{
 width:100%;
 padding:14px 16px;
-border:1px solid #e5e7eb;
+border:1px solid rgba(84, 64, 62, 0.15);
 border-radius:12px;
 font-size:15px;
-color: #1f2937;
-background-color: #f9fafb;
+color: #54403e;
+background-color: rgba(252, 242, 224, 0.3);
 transition: all .2s ease;
 }
 input::placeholder,
@@ -95,9 +92,9 @@ color: #9ca3af;
 input:focus,
 textarea:focus{
 outline:none;
-border-color:#f59e0b;
+border-color:#54403e;
 background-color: #fff;
-box-shadow:0 0 0 4px rgba(245,158,11,.1);
+box-shadow:0 0 0 4px rgba(84, 64, 62, 0.1);
 }
 textarea{
 height:110px;
@@ -105,10 +102,10 @@ resize:none;
 }
 .rating-box{
 margin-bottom:24px;
-background: #f9fafb;
+background: rgba(252, 242, 224, 0.4);
 padding: 16px;
 border-radius: 12px;
-border: 1px solid #f3f4f6;
+border: 1px solid rgba(84, 64, 62, 0.08);
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -116,7 +113,7 @@ align-items: center;
 .rating-title{
 font-weight:600;
 font-size: 14px;
-color:#374151;
+color:#54403e;
 }
 .stars{
 display:flex;
@@ -136,26 +133,26 @@ margin-left:4px;
 .stars label:hover,
 .stars label:hover ~ label,
 .stars input:checked ~ label{
-color:#f59e0b;
+color:#54403e;
 }
 button{
 width:100%;
 padding:16px;
 border:none;
 border-radius:12px;
-background:#111827;
-color:white;
+background:#54403e;
+color:#fcf2e0;
 font-size:16px;
 font-weight:600;
 cursor:pointer;
 transition:all .2s ease;
 margin-top: 8px;
-box-shadow: 0 4px 12px rgba(17, 24, 39, 0.15);
+box-shadow: 0 4px 12px rgba(84, 64, 62, 0.15);
 }
 button:hover{
-background:#1f2937;
+background:#423230;
 transform: translateY(-1px);
-box-shadow: 0 6px 20px rgba(17, 24, 39, 0.2);
+box-shadow: 0 6px 20px rgba(84, 64, 62, 0.25);
 }
 button:active {
 transform: translateY(0);
@@ -180,11 +177,12 @@ to { opacity: 1; transform: translateY(0); }
 .footer{
 text-align:center;
 padding:24px;
-font-size:13px;
-color:#9ca3af;
-border-top:1px solid #f3f4f6;
+font-size:12px;
+color:rgba(84, 64, 62, 0.5);
+border-top:1px solid rgba(84, 64, 62, 0.05);
 background: #fafafa;
-letter-spacing: 0.5px;
+letter-spacing: 1px;
+font-weight: 500;
 }
 </style>
 </head>
@@ -222,7 +220,7 @@ letter-spacing: 0.5px;
 </div>
 </div>
 
-<!-- Service Rating Redesigned into Star System -->
+<!-- Service Rating -->
 <div class="rating-box">
 <div class="rating-title">Service Rating</div>
 <div class="stars">
@@ -239,7 +237,7 @@ letter-spacing: 0.5px;
 </div>
 </div>
 
-<!-- Cleanliness Rating Redesigned into Star System -->
+<!-- Cleanliness Rating -->
 <div class="rating-box">
 <div class="rating-title">Cleanliness Rating</div>
 <div class="stars">
@@ -289,3 +287,5 @@ document.getElementById("successMessage").style.display="none";
 </script>
 </body>
 </html>
+
+```
